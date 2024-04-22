@@ -1,18 +1,28 @@
-import { useState } from "react";
+const Counter = ({ count, decrement, increment }) => {
+	return (
+		<div className="counter-container">
+			<p className="counter-value">{count}</p>
+			
+      {/* <input
+				type="text"
+				onChange={(e) => {
+					handleInput(e)
+				}}
+			/> */}
+			{/* <input type="text" onChange={handleInput} /> */}
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+			<button className="counter-button" onClick={decrement}>
+				-
+			</button>
+			<button
+				className="counter-button"
+				onClick={() => {
+					increment()
+				}}>
+				+
+			</button>
+		</div>
+	)
+}
 
-  const decrement = () => setCount((prevCount) => prevCount - 1);
-  const increment = () => setCount((prevCount) => prevCount + 1);
-
-  return (
-    <div className="counter-container">
-      <p className="counter-value">{count}</p>
-      <button className="counter-button" onClick={decrement}>-</button>
-      <button className="counter-button" onClick={increment}>+</button>
-    </div>
-  );
-};
-
-export default Counter;
+export default Counter
